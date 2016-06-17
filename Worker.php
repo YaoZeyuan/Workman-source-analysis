@@ -951,7 +951,7 @@ class Worker
             $worker->setUserAndGroup();
             $worker->id = $id;
             $worker->run();
-            /* @zeyuany 子进程run完毕后自动退出(但这个250是什么意思，run方法点进去看了下，都是返回250) */
+            /* @zeyuany 子进程run完毕后自动退出  退出码250为异常退出的 */
             exit(250);
         } else {
             throw new Exception("forkOneWorker fail");
